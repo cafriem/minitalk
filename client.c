@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:14:29 by cafriem           #+#    #+#             */
-/*   Updated: 2022/08/29 16:19:07 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/07 17:50:37 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ int	main(int argc, char *argv[])
 		return (-1);
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
+	str = ft_strjoin(str, "\n");
 	send_str(str, pid);
 }
