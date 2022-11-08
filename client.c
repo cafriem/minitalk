@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:14:29 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/07 17:50:37 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/08/29 16:19:07 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ static int	arg_checker(int argc, char *argv[])
 
 	i = 0;
 	if (argc != 3)
-		return (-1);
+	{
+		
+	}
 	while (!argv[1][i])
 	{
 		if (!(ft_strchr("0123456789", argv[1][i])))
@@ -64,10 +66,9 @@ int	main(int argc, char *argv[])
 	char	*str;
 	int		pid;
 
-	if (arg_checker(argc, argv))
-		return (-1);
+	arg_checker(argc, argv);
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
-	str = ft_strjoin(str, "\n");
 	send_str(str, pid);
+	free(str);
 }
