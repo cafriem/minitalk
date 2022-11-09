@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:14:29 by cafriem           #+#    #+#             */
-/*   Updated: 2022/08/29 16:19:07 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:12:36 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	arg_checker(int argc, char *argv[])
 	i = 0;
 	if (argc != 3)
 	{
-		
+		return (-1);
 	}
 	while (!argv[1][i])
 	{
