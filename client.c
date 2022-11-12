@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:14:29 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/09 15:12:36 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/12 13:50:43 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,12 @@ int	main(int argc, char *argv[])
 	char	*str;
 	int		pid;
 
-	arg_checker(argc, argv);
+	if (arg_checker(argc, argv) == -1)
+	{
+		write(1, "Error with arguements", 22);
+		exit (1);
+	}
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
 	send_str(str, pid);
-	free(str);
 }
