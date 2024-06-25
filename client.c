@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:14:29 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/12 13:50:43 by cafriem          ###   ########.fr       */
+/*   Updated: 2024/06/25 21:04:49 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,21 @@ static int	arg_checker(int argc, char *argv[])
 
 static void	send_bit(int binary, int pid)
 {
+	int c;
+
+	c = 0;
 	if (binary == 0)
+	{
 		kill(pid, SIGUSR1);
+		c++;
+	}
 	if (binary == 1)
+	{
 		kill(pid, SIGUSR2);
+		c++;
+	}
+	if (c == 1)
+		ft_putstr_fd("recieved\n");
 	usleep(90);
 }
 
